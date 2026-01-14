@@ -1,0 +1,95 @@
+.header {
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg) var(--spacing-md);
+  background: var(--md-sys-color-surface-container);
+  border-radius: var(--md-sys-shape-corner-extra-large);
+  box-shadow: var(--md-sys-elevation-1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.header-title {
+  font-size: var(--md-sys-typescale-headline-large-size);
+  line-height: var(--md-sys-typescale-headline-large-line-height);
+  font-weight: var(--md-sys-typescale-headline-large-weight);
+  color: var(--md-sys-color-on-surface);
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.25px;
+}
+
+/* Demo Mode Badge - Material Design 3 Assist Chip */
+.demo-badge {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  background: var(--md-sys-color-tertiary-container);
+  color: var(--md-sys-color-on-tertiary-container);
+  padding: 6px var(--spacing-md);
+  border-radius: var(--md-sys-shape-corner-small);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: 1px solid var(--md-sys-color-outline);
+  box-shadow: var(--md-sys-elevation-0);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: help;
+}
+
+.demo-badge:hover {
+  box-shadow: var(--md-sys-elevation-1);
+  transform: translateY(-1px);
+}
+
+/* Responsive design for mobile and desktop */
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-sm);
+    border-radius: var(--md-sys-shape-corner-large);
+  }
+  
+  .header-title {
+    font-size: var(--md-sys-typescale-headline-medium-size);
+    line-height: var(--md-sys-typescale-headline-medium-line-height);
+  }
+  
+  .demo-badge {
+    position: static;
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: var(--md-sys-typescale-title-large-size);
+    line-height: var(--md-sys-typescale-title-large-line-height);
+  }
+  
+  .demo-badge {
+    font-size: 10px;
+    padding: 4px var(--spacing-sm);
+  }
+}
+
+/* Desktop enhancements */
+@media (min-width: 1024px) {
+  .header {
+    margin-bottom: 40px;
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+  
+  .header-title {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  
+  .demo-badge {
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+  }
+}

@@ -1,0 +1,153 @@
+/* ResponseDisplay component styles - Material Design 3 */
+
+.response-display {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+/* Material Design 3 Elevated Card */
+.conversation-item {
+  background: var(--md-sys-color-surface-container-low);
+  border-radius: var(--md-sys-shape-corner-large);
+  padding: var(--spacing-lg);
+  box-shadow: var(--md-sys-elevation-1);
+  transition: box-shadow 0.3s ease, transform 0.2s ease, background-color 0.3s ease;
+  border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.conversation-item:hover {
+  box-shadow: var(--md-sys-elevation-2);
+  transform: translateY(-2px);
+  background: var(--md-sys-color-surface-container);
+}
+
+.response-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.response-text {
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  font-weight: var(--md-sys-typescale-body-large-weight);
+  color: var(--md-sys-color-on-surface);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  letter-spacing: 0.5px;
+}
+
+.response-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  font-size: var(--md-sys-typescale-body-small-size);
+  color: var(--md-sys-color-on-surface-variant);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  padding-top: var(--spacing-sm);
+  margin-top: var(--spacing-xs);
+}
+
+/* Material Design 3 Assist Chip */
+.response-mode {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  padding: 6px var(--spacing-md);
+  border-radius: var(--md-sys-shape-corner-small);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid var(--md-sys-color-outline);
+}
+
+.response-timestamp {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.processing-time {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 12px;
+  line-height: 16px;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .response-display {
+    gap: var(--spacing-md);
+  }
+  
+  .conversation-item {
+    padding: var(--spacing-md);
+    border-radius: var(--md-sys-shape-corner-medium);
+  }
+  
+  .response-text {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  
+  .response-meta {
+    gap: var(--spacing-sm);
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .conversation-item {
+    padding: var(--spacing-md);
+  }
+  
+  .response-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .response-meta {
+    gap: var(--spacing-xs);
+  }
+  
+  .response-mode {
+    font-size: 11px;
+    padding: 4px var(--spacing-sm);
+  }
+}
+
+/* Ensure long URLs and code snippets wrap properly */
+.response-text a,
+.response-text code {
+  word-break: break-all;
+}
+
+/* Desktop enhancements */
+@media (min-width: 1024px) {
+  .conversation-item {
+    padding: var(--spacing-xl);
+  }
+  
+  .response-text {
+    font-size: 17px;
+    line-height: 28px;
+  }
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .conversation-item {
+    transition: none;
+  }
+  
+  .conversation-item:hover {
+    transform: none;
+  }
+}

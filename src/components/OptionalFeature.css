@@ -1,0 +1,65 @@
+.optional-feature {
+  margin-top: var(--spacing-sm);
+}
+
+.feature-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  user-select: none;
+}
+
+.feature-label {
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  color: var(--md-sys-color-on-surface-variant);
+  letter-spacing: 0.25px;
+}
+
+/* Material Design 3 Outlined Select */
+.feature-select {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  min-height: 40px;
+}
+
+.feature-select:hover:not(:disabled) {
+  border-color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface-container-low);
+}
+
+@supports (background-color: color-mix(in srgb, white, black)) {
+  .feature-select:hover:not(:disabled) {
+    background-color: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, var(--md-sys-color-surface));
+  }
+}
+
+.feature-select:focus {
+  outline: none;
+  border-color: var(--md-sys-color-primary);
+  border-width: 2px;
+  padding: calc(var(--spacing-sm) - 1px) calc(var(--spacing-md) - 1px);
+}
+
+.feature-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+  background-color: var(--md-sys-color-surface-variant);
+  border-color: var(--md-sys-color-on-surface);
+  border-style: dotted;
+  color: var(--md-sys-color-on-surface);
+}
+
+@supports (background-color: color-mix(in srgb, white, black)) {
+  .feature-select:disabled {
+    background-color: color-mix(in srgb, var(--md-sys-color-on-surface) 4%, var(--md-sys-color-surface));
+  }
+}

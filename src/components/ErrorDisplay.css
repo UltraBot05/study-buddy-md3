@@ -1,0 +1,146 @@
+/* ErrorDisplay component styles - Material Design 3 */
+
+.error-display {
+  margin: var(--spacing-md) 0;
+  padding: var(--spacing-md);
+  background-color: var(--md-sys-color-error-container);
+  border: 1px solid var(--md-sys-color-error);
+  border-radius: var(--md-sys-shape-corner-medium);
+  animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--md-sys-elevation-1);
+  transition: background-color 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.error-content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.error-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.error-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.error-message {
+  color: var(--md-sys-color-on-error-container);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  font-weight: var(--md-sys-typescale-body-medium-weight);
+  letter-spacing: 0.25px;
+}
+
+/* Material Design 3 Filled Tonal Button */
+.retry-button {
+  align-self: flex-start;
+  padding: 10px var(--spacing-lg);
+  background-color: var(--md-sys-color-error);
+  color: var(--md-sys-color-on-error);
+  border: none;
+  border-radius: var(--md-sys-shape-corner-full);
+  font-size: var(--md-sys-typescale-label-large-size);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  min-height: 40px;
+  box-shadow: var(--md-sys-elevation-0);
+  position: relative;
+  overflow: hidden;
+}
+
+/* MD3 State Layer */
+.retry-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--md-sys-color-on-error);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.retry-button:hover::before {
+  opacity: 0.08;
+}
+
+.retry-button:hover {
+  box-shadow: var(--md-sys-elevation-1);
+}
+
+.retry-button:focus {
+  outline: none;
+}
+
+.retry-button:focus::before {
+  opacity: 0.12;
+}
+
+.retry-button:active {
+  transform: scale(0.98);
+}
+
+.retry-button:active::before {
+  opacity: 0.12;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .error-display {
+    padding: var(--spacing-md);
+    border-radius: var(--md-sys-shape-corner-small);
+  }
+
+  .error-icon {
+    font-size: 20px;
+  }
+
+  .error-message {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .retry-button {
+    padding: 8px var(--spacing-md);
+    font-size: 13px;
+    min-height: 36px;
+  }
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .error-display {
+    animation: none;
+  }
+  
+  .retry-button {
+    transition: none;
+  }
+  
+  .retry-button:active {
+    transform: none;
+  }
+}

@@ -1,0 +1,202 @@
+.question-input {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.question-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.input-group {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: stretch;
+}
+
+/* Material Design 3 Filled Text Field */
+.question-field {
+  flex: 1;
+  padding: var(--spacing-md) var(--spacing-md);
+  border: none;
+  border-bottom: 1px solid var(--md-sys-color-on-surface-variant);
+  border-radius: var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) 0 0;
+  font-size: var(--md-sys-typescale-body-large-size);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  font-family: inherit;
+  background-color: var(--md-sys-color-surface-container-highest);
+  color: var(--md-sys-color-on-surface);
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  min-height: 56px;
+}
+
+.question-field::placeholder {
+  color: var(--md-sys-color-on-surface-variant);
+  opacity: 0.7;
+}
+
+.question-field:hover:not(:disabled) {
+  background-color: var(--md-sys-color-surface-container-high);
+}
+
+@supports (background-color: color-mix(in srgb, white, black)) {
+  .question-field:hover:not(:disabled) {
+    background-color: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, var(--md-sys-color-surface-container-highest));
+  }
+}
+
+.question-field:focus {
+  outline: none;
+  border-bottom: 2px solid var(--md-sys-color-primary);
+  background-color: var(--md-sys-color-surface-container-highest);
+}
+
+.question-field:disabled {
+  background-color: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface);
+  opacity: 0.38;
+  cursor: not-allowed;
+  border-bottom-color: var(--md-sys-color-on-surface);
+  border-bottom-style: dotted;
+}
+
+@supports (background-color: color-mix(in srgb, white, black)) {
+  .question-field:disabled {
+    background-color: color-mix(in srgb, var(--md-sys-color-on-surface) 4%, var(--md-sys-color-surface));
+  }
+}
+
+.question-field.error {
+  border-bottom-color: var(--md-sys-color-error);
+  background-color: var(--md-sys-color-error-container);
+}
+
+@supports (background-color: color-mix(in srgb, white, black)) {
+  .question-field.error {
+    background-color: color-mix(in srgb, var(--md-sys-color-error) 8%, var(--md-sys-color-surface-container-highest));
+  }
+}
+
+.question-field.error:focus {
+  border-bottom: 2px solid var(--md-sys-color-error);
+}
+
+/* Material Design 3 Filled Button */
+.ask-button {
+  padding: 10px var(--spacing-lg);
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  border: none;
+  border-radius: var(--md-sys-shape-corner-full);
+  font-size: var(--md-sys-typescale-label-large-size);
+  line-height: var(--md-sys-typescale-label-large-line-height);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  letter-spacing: 0.1px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  white-space: nowrap;
+  min-height: 40px;
+  box-shadow: var(--md-sys-elevation-0);
+  position: relative;
+  overflow: hidden;
+}
+
+/* MD3 State Layer - Hover */
+.ask-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--md-sys-color-on-primary);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.ask-button:hover:not(:disabled)::before {
+  opacity: 0.08;
+}
+
+.ask-button:hover:not(:disabled) {
+  box-shadow: var(--md-sys-elevation-1);
+}
+
+.ask-button:focus {
+  outline: none;
+}
+
+.ask-button:focus::before {
+  opacity: 0.12;
+}
+
+.ask-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.ask-button:active:not(:disabled)::before {
+  opacity: 0.12;
+}
+
+.ask-button:disabled {
+  background-color: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface);
+  opacity: 0.38;
+  cursor: not-allowed;
+  box-shadow: var(--md-sys-elevation-0);
+}
+
+@supports (background-color: color-mix(in srgb, white, black)) {
+  .ask-button:disabled {
+    background-color: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);
+    color: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, transparent);
+  }
+}
+
+/* Material Design 3 Error Messages */
+.error-message {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+}
+
+.validation-error {
+  background-color: var(--md-sys-color-error-container);
+  color: var(--md-sys-color-on-error-container);
+}
+
+.external-error {
+  background-color: var(--md-sys-color-error-container);
+  color: var(--md-sys-color-on-error-container);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .input-group {
+    flex-direction: column;
+  }
+  
+  .ask-button {
+    width: 100%;
+    min-height: 48px;
+  }
+  
+  .question-field {
+    font-size: var(--md-sys-typescale-body-large-size);
+  }
+}
+
+@media (max-width: 480px) {
+  .question-field {
+    padding: 12px var(--spacing-md);
+    min-height: 52px;
+  }
+  
+  .ask-button {
+    padding: 12px var(--spacing-lg);
+  }
+}
