@@ -119,7 +119,7 @@ This is a student portfolio project. Feel free to use it as inspiration for your
 
 ## 👤 Author
 
-Built by UltraBot05 for the Creators Club
+Built by UltraBot05
 
 ## 🙏 Acknowledgments
 
